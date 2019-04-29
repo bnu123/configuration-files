@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# make directory and change directory to that
+file=$1
+mkdir $file 
+cd $file
+
