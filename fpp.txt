@@ -1,0 +1,11 @@
+#include <bits/stdc++.h> //Only for gcc compilers
+using namespace std;
+typedef vector<vector<int>> vvi;
+typedef pair<int,int> pii;
+typedef vector<pii> vii;
+typedef vector<int> vi;
+
+int main()
+{
+
+}
