@@ -1,1 +1,2 @@
-# installer to be set up
+# setting up usr-commands
+

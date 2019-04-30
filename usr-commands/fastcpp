@@ -1,7 +1,16 @@
 #!/usr/bin/zsh
 
 file=$1
-dir="$HOME/codeIt"
+home=$HOME # preventing a change in actual $HOME
+dir="$home/codeIt"
+
+# if argument is null, then
+if [ -z "$file" ]; then
+    # Can only be used either in function or sourced scripts
+    # ref : https://unix.stackexchange.com/a/138736
+    echo "No file passed"
+    return  
+fi
 
 # if dir does not exist make it
 if [ ! -d $dir ]; then
@@ -9,18 +18,11 @@ if [ ! -d $dir ]; then
 fi
 
 # if exists change dir
-cd ~/codeIT
-
-# if argument is null, then
-if [ -z "$file" ]; then
-    # Can only be used either in function or sourced scripts
-    # ref : https://unix.stackexchange.com/a/138736
-    return  
-fi
+cd "$home/codeIT"
 
 # if file doesn't exists, make one with predefined text
 if [ ! -f $file ]; then
-    cp "$HOME/dotfiles/fpp.txt" $file
+    cp "$home/dotfiles/fpp.txt" $file
 fi
 
 vi +10 $file

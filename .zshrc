@@ -100,4 +100,5 @@ alias learn="vi ~/W_Learnt_today"
 alias bokete="evince ~/.competetive/.competetive_book/Competitive\ Programming\ 3.pdf"
 alias reload=". ~/.zshrc"
 alias fpp=". fastcpp"
+alias hub="cd ~/Projects/HubProj/"
 setxkbmap -option caps:swapescape
