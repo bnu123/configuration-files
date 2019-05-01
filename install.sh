@@ -1,3 +1,6 @@
+# absolute path of this script
+source_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+
 #:Updation and upgradation
 echo "Welcome, Upgrading and Updating your System ..."
 sudo apt-get -y update
@@ -22,13 +25,15 @@ sudo apt-get -y install g++
 echo "Installing synaptic"
 sudo apt-get -y install synaptic
 
-#Setting up zshrc,bashrc,vimrc,
-
-source_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
-
+printf "Setting up zshrc, bashrc and vimrc "
+mv ~/.zshrc ~/.zshrc.bak
+ln -s $source_path/.zshrc ~/.zshrc
+ln -s $source_path/.bashrc ~/.bashrc
 
 # TODO:setting up usr-commands
-
+printf "User commands setup"
+cp $source_path/usr-commands/crnch /usr/local/bin/crnch
+cp $source_path/usr-commands/fastcpp /usr/local/bin/fastcpp
 
 # TODO:Set up wallpaper, theme (download and apply it).
 
