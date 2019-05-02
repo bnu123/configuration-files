@@ -100,5 +100,6 @@ alias learn="vi ~/W_Learnt_today"
 alias bokete="evince ~/.competetive/.competetive_book/Competitive\ Programming\ 3.pdf"
 alias reload=". ~/.zshrc"
 alias fpp=". fastcpp"
-alias hub="cd ~/Projects/HubProj/"
+alias hub=". hub"
+#remove the annoying capslock to be more useful :D
 setxkbmap -option caps:swapescape
