@@ -25,10 +25,12 @@ sudo apt-get -y install g++
 echo "Installing synaptic"
 sudo apt-get -y install synaptic
 
-printf "Setting up zshrc, bashrc and vimrc "
-mv ~/.zshrc ~/.zshrc.bak
-ln -s $source_path/.zshrc ~/.zshrc
-ln -s $source_path/.bashrc ~/.bashrc
+echo "Setting up zshrc, bashrc and vimrc "
+mv .zshrc ~/.zshrc.old
+mv .bashrc ~/.bashrc.old
+ln -s $source_path/.zshrc ~/
+ln -s $source_path/.bashrc ~/
+echo "Old configuration in ~/.zshrc.old and ~/.bashrc.old"
 
 # TODO:setting up usr-commands
 printf "User commands setup"
