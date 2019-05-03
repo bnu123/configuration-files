@@ -3,8 +3,8 @@ source_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SO
 
 #:Updation and upgradation
 echo "Welcome, Upgrading and Updating your System ..."
-sudo apt-get -y update
-sudo apt-get -y upgrade
+sudo apt-get update
+sudo apt-get upgrade
 
 echo "Frequent Use App Installation"
 echo "Installing zsh"
@@ -31,14 +31,17 @@ ln -s $source_path/.zshrc ~/
 ln -s $source_path/.bashrc ~/
 echo "Note : Old configuration in ~/.zshrc.old and ~/.bashrc.old"
 
-# TODO:setting up usr-commands
+#:setting up usr-commands
 echo "User commands setup"
 ln -s $source_path/usr-commands/crnch /usr/local/bin/crnch
 ln -s $source_path/usr-commands/fastcpp /usr/local/bin/fastcpp
 ln -s $source_path/usr-commands/hub /usr/local/bin/hub
 
+# TODO: Sett up Preferences
+    # TODO:Set up wallpaper, theme (download and apply it).
 
-# TODO:Set up wallpaper, theme (download and apply it).
+    # TODO:Set up Development environment
 
-# TODO:Set up Development environment
-    # TODO: Set up nodejs, npm, nginx, Dockers, VsCode, VsCode extensions
+        # TODO: Set up nodejs, npm, nginx, Dockers
+        # TODO: Set up vscode.
+
