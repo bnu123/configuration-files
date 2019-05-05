@@ -16,6 +16,7 @@ app_install() {
     done
 
     #installing oh-my-zsh
+    echo "Installing oh-my-zsh"
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
     echo "Setting up zshrc, bashrc and vimrc "
@@ -35,11 +36,7 @@ ln -s $source_path/usr-commands/crnch /usr/local/bin/crnch
 ln -s $source_path/usr-commands/fastcpp /usr/local/bin/fastcpp
 ln -s $source_path/usr-commands/hub /usr/local/bin/hub
 
-# TODO: Sett up Preferences
-    # TODO:Set up wallpaper, theme (download and apply it).
+# TODO:Set up wallpaper, theme (download and apply it).
 
-    # TODO:Set up Development environment
-
-        # TODO: Set up nodejs, npm, nginx, Dockers
-        # TODO: Set up vscode.
+    # TODO: Set up vscode.
 
