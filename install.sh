@@ -28,7 +28,7 @@ app_install() {
 }
 
 configure_editor() {
-    echo "Sorry Not Implemented Yet"
+    #implementation due
 }
 
 dev_configure() {
@@ -58,9 +58,15 @@ usr_commands(){
 }
 
 env_configure(){
-
+    echo "Downloading fonts..."
+    source ./source_code_font.sh
+    echo "Setting up fonts for terminal and Desktop..."
+    gsettings set org.gnome.desktop.wm.preference titlebar-font 'Source Code Pro Medium 11'
+    gsettings set org.gnome.desktop.interface font-name 'Source Code Pro Heavy 12'
+    gsettings set org.gnome.desktop.interface document-font-name 'Source Code Pro Medium 11'
+    gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Medium 13'
+    echo "Fonts configuration complete"
 }
-
 app_install #install the apps
 dev_configure #Configure your development environment
 env_configre #Configure environment (Fonts,Themes etc)
