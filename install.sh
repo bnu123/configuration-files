@@ -46,7 +46,7 @@ dev_configure() {
     sudo apt-get -y install code
 
     #configure_editor with extensions and editor settings
-    conifgure_editor
+    configure_editor
 }
 
 usr_commands(){
