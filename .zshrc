@@ -101,5 +101,7 @@ alias bokete="evince ~/.competetive/.competetive_book/Competitive\ Programming\ 
 alias reload=". ~/.zshrc"
 alias fpp=". fastcpp"
 alias hub=". hub"
+alias update="sudo apt-get update"
+alias upgrade="sudo apt-get upgrade"
 #remove the annoying capslock to be more useful :D
 setxkbmap -option caps:swapescape

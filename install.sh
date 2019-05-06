@@ -8,7 +8,7 @@ app_install() {
     sudo apt-get upgrade
 
     #Frequently used apps
-    local apps=('zsh' 'curl' 'wget' 'vlc' 'build-essential' 'gcc' 'g++' 'synaptic' 'gnome-tweaks' 'software-properties-common' 'apt-transport-https')
+    local apps=('zsh' 'vim' 'curl' 'wget' 'vlc' 'build-essential' 'gcc' 'g++' 'synaptic' 'gnome-tweaks' 'software-properties-common' 'apt-transport-https')
 
     for i in "${apps[@]}"; do
         echo "Installing $i"
