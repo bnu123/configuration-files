@@ -1,0 +1,22 @@
+{
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.fontFamily": "'source code pro'",
+    "editor.fontWeight": "500",
+    "editor.fontSize": 17,
+    "python.linting.enabled": true,
+    "editor.tokenColorCustomizations": {
+        "comments": "#66696b",
+
+    },
+    "workbench.settings.editor": "json",
+    "window.zoomLevel": 0,
+    "explorer.confirmDragAndDrop": false,
+    "html.suggest.html5": true,
+    "html.autoClosingTags": true,
+    "html.format.indentInnerHtml": true,
+    "html.validate.styles": true,
+    "html.format.enable": true,
+    "explorer.confirmDelete": false,
+
+}

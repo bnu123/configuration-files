@@ -29,6 +29,13 @@ app_install() {
 
 configure_editor() {
     #implementation due
+    echo "Copying vscode settings to $HOME/.config/Code/User/"
+    # Symbolic link is preferred though not tested so simple copying is done with
+    # minimum configuration settings for vscode
+    mv $HOME/.config/Code/User/settings.json $HOME/.config/Code/User/settings.old
+    cp ./vs_settings/settings.json $HOME/.config/Code/User/settings.json
+    mv $HOME/.config/Code/User/keybindings.json $HOME/.config/Code/User/keybindings.json
+    echo "Settings Copied"
 }
 
 dev_configure() {
@@ -47,6 +54,8 @@ dev_configure() {
 
     #configure_editor with extensions and editor settings
     configure_editor
+
+    #TODO: Anaconda environment install for python
 }
 
 usr_commands(){
@@ -69,8 +78,8 @@ env_configure(){
 
 }
 app_install #install the apps
-dev_configure #Configure your development environment
 env_configre #Configure environment (Fonts,Themes etc)
+dev_configure #Configure your development environment
 
 # TODO: Anaconda install
 
