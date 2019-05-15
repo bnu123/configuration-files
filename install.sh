@@ -75,11 +75,10 @@ env_configure(){
     gsettings set org.gnome.desktop.interface document-font-name 'Source Code Pro Medium 11'
     gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro Medium 13'
     echo "Fonts configuration complete"
-
 }
+
 app_install #install the apps
 env_configre #Configure environment (Fonts,Themes etc)
 dev_configure #Configure your development environment
 
 # TODO: Anaconda install
-

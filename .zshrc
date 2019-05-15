@@ -105,3 +105,6 @@ alias update="sudo apt-get update"
 alias upgrade="sudo apt-get upgrade"
 #remove the annoying capslock to be more useful :D
 setxkbmap -option caps:swapescape
+
+export PATH="/home/benubha/anaconda3/bin:$PATH"
+
