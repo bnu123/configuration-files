@@ -61,9 +61,14 @@ dev_configure() {
 usr_commands(){
     #:setting up usr-commands
     echo "User commands setup"
+    echo "Changing owner of /usr/local/bin"
+    sudo chown -R $USER:$USER /usr/local/bin
+    echo "Owner of bin successfully changed"
+
     ln -s $source_path/usr-commands/crnch /usr/local/bin/crnch
     ln -s $source_path/usr-commands/fastcpp /usr/local/bin/fastcpp
     ln -s $source_path/usr-commands/hub /usr/local/bin/hub
+    ln -s $source_path/fpp.txt /usr/local/bin/fpp.txt
 }
 
 env_configure(){
