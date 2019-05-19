@@ -23,13 +23,18 @@ else #else if argument is passed
             mkdir $base_dir/algo
         fi
         dir=$base_dir/algo
+    elif [ "$opt_dir" = "-v" ]; then
+        if [ ! -d $base_dir/virtual_practice ]; then
+            mkdir $base_dir/virtual_practice
+        fi
+        dir=$base_dir/virtual_practice
     else
-        echo "Sorry $opt_dir is wrong"
+        echo "$opt_dir is wrong"
     fi
 fi
 file=$2
 
-# if argument is null, then
+# if file argument is null, then
 if [ -z "$file" ]; then
     # Can only be used either in function or sourced scripts
     # ref : https://unix.stackexchange.com/a/138736
