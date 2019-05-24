@@ -55,7 +55,6 @@ dev_configure() {
     #configure_editor with extensions and editor settings
     configure_editor
 
-    #TODO: Anaconda environment install for python
 }
 
 usr_commands(){
@@ -86,4 +85,3 @@ app_install #install the apps
 env_configre #Configure environment (Fonts,Themes etc)
 dev_configure #Configure your development environment
 
-# TODO: Anaconda install

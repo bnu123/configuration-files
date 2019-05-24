@@ -24,10 +24,15 @@ else #else if argument is passed
         fi
         dir=$base_dir/algo
     elif [ "$opt_dir" = "-v" ]; then
-        if [ ! -d $base_dir/virtual_practice ]; then
-            mkdir $base_dir/virtual_practice
+        if [ ! -d $base_dir/virtual_contest ]; then
+            mkdir $base_dir/virtual_contest
         fi
-        dir=$base_dir/virtual_practice
+        dir=$base_dir/virtual_contest
+    elif [ "$opt_dir" = "-p" ]; then
+        if [ ! -d $base_dir/practice ]; then
+            mkdir $base_dir/practice
+        fi
+        dir=$base_dir/practice
     else
         echo "$opt_dir is wrong"
     fi
