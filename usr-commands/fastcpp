@@ -38,7 +38,7 @@ else #else if argument is passed
     fi
 fi
 file=$2
-
+quest=$3
 # if file argument is null, then
 if [ -z "$file" ]; then
     # Can only be used either in function or sourced scripts
@@ -51,9 +51,14 @@ fi
 cd $dir 
 # if file doesn't exists, make one with predefined text
 if [ ! -f $file ]; then
-    cp "/usr/local/bin/fpp.txt" $file
+    if [ ! -z $quest ]; then
+        cat >> $file << END
+//Question : $quest
+END
+    fi
+    cat ~/Projects/HubProj/bash/dotfiles/fpp.txt >> $file
     vi +10 $file
 else
     vi $file
 fi
-
+        
