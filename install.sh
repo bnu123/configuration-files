@@ -20,8 +20,8 @@ app_install() {
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
     echo "Setting up zshrc, bashrc and vimrc "
-    mv .zshrc ~/.zshrc.old
-    mv .bashrc ~/.bashrc.old
+    mv ~/.zshrc ~/.zshrc.old
+    mv ~/.bashrc ~/.bashrc.old
     ln -s $source_path/.zshrc ~/
     ln -s $source_path/.bashrc ~/
     echo "Note : Old configuration in ~/.zshrc.old and ~/.bashrc.old"
@@ -53,7 +53,7 @@ dev_configure() {
     sudo apt-get -y install code
 
     #configure_editor with extensions and editor settings
-    configure_editor
+    #configure_editor
 
 }
 
@@ -82,6 +82,6 @@ env_configure(){
 }
 
 app_install #install the apps
-env_configre #Configure environment (Fonts,Themes etc)
-dev_configure #Configure your development environment
+env_configure #Configure environment (Fonts,Themes etc)
+#dev_configure #Configure your development environment
 

@@ -1,63 +1,50 @@
 #!/usr/bin/zsh
 
-opt_dir=$1 #which category file is (either competetive coding or Algorithm Practice)
 home=$HOME # preventing a change in actual $HOME
 base_dir=$home/codeIt
+
+opt_dir=${1:-"-c"} #default is competing directory
+file=${2:-"test.cpp"} #default file that will open
+quest=${3:-"testing"}
 
 # check if base_dir exit, otherwise create it
 if [ ! -d $base_dir ]; then
     mkdir $base_dir
 fi
 # check if argument is empty
-if [ -z "$opt_dir" ]; then 
-    # check if main directory exists (only used first time)
-    dir=$base_dir
-else #else if argument is passed
-    if [ "$opt_dir" = "-c" ]; then
-        if [ ! -d $base_dir/compete ]; then
-            mkdir $base_dir/compete
-        fi
-        dir=$base_dir/compete
-    elif [ "$opt_dir" = "-a" ]; then
-        if [ ! -d $base_dir/algo ]; then
-            mkdir $base_dir/algo
-        fi
-        dir=$base_dir/algo
-    elif [ "$opt_dir" = "-v" ]; then
-        if [ ! -d $base_dir/virtual_contest ]; then
-            mkdir $base_dir/virtual_contest
-        fi
-        dir=$base_dir/virtual_contest
-    elif [ "$opt_dir" = "-p" ]; then
-        if [ ! -d $base_dir/practice ]; then
-            mkdir $base_dir/practice
-        fi
-        dir=$base_dir/practice
-    else
-        echo "$opt_dir is wrong"
+
+if [ "$opt_dir" = "-c" ]; then
+    if [ ! -d $base_dir/compete ]; then
+        mkdir $base_dir/compete
     fi
-fi
-file=$2
-quest=$3
-# if file argument is null, then
-if [ -z "$file" ]; then
-    # Can only be used either in function or sourced scripts
-    # ref : https://unix.stackexchange.com/a/138736
-    echo "No file passed"
-    return  
+    dir=$base_dir/compete
+elif [ "$opt_dir" = "-a" ]; then
+    if [ ! -d $base_dir/algo ]; then
+        mkdir $base_dir/algo
+    fi
+    dir=$base_dir/algo
+elif [ "$opt_dir" = "-v" ]; then
+    if [ ! -d $base_dir/virtual_contest ]; then
+        mkdir $base_dir/virtual_contest
+    fi
+    dir=$base_dir/virtual_contest
+elif [ "$opt_dir" = "-p" ]; then
+    if [ ! -d $base_dir/practice ]; then
+        mkdir $base_dir/practice
+    fi
+    dir=$base_dir/practice
+
 fi
 
 # change to dir (based on options above)
 cd $dir 
 # if file doesn't exists, make one with predefined text
 if [ ! -f $file ]; then
-    if [ ! -z $quest ]; then
-        cat >> $file << END
+    cat >> $file << END
 //Question : $quest
 END
-    fi
     cat ~/Projects/HubProj/bash/dotfiles/fpp.txt >> $file
-    vi +10 $file
+    vi +15 $file
 else
     vi $file
 fi

@@ -1,4 +1,10 @@
 #include <bits/stdc++.h> //Only for gcc compilers
+#define int long long
+#define dg(x) cout << #x << ":"<<x<<endl;
+#define dg2(x,y) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<endl;
+#define dg3(x,y,z) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<' '<<#z<<':'<<z<<endl;
+#define dg4(x,y,z,zz) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<' '<<#z<<':'<<z<<' '<<#zz<<':'<<zz<<endl;
+#define forn(i,st,n) for(int (i)=(st); i<(n); i++)
 using namespace std;
 typedef vector<vector<int>> vvi;
 typedef pair<int,int> pii;
