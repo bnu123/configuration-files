@@ -3,7 +3,7 @@ source_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SO
 
 app_install() {
     #:Updation and upgradation
-    echo "Welcome, Upgrading and Updating your System ..."
+    echo "Welcome, Updating your system"
     sudo apt-get update
     sudo apt-get upgrade
 
@@ -38,23 +38,8 @@ configure_editor() {
     echo "Settings Copied"
 }
 
-dev_configure() {
-#Editor==============================
-    echo "Setting up Development environment"
-
-    #installing vscode
-    echo "Downloading vscode"
-
-    #importing Microsoft GPG key
-    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-
-    #enable VsCode Repo
-    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    sudo apt-get -y install code
-
-    #configure_editor with extensions and editor settings
-    #configure_editor
-
+WIPdev_configure(){
+    #Due to highly unstable nature, previous implementation was removed.
 }
 
 usr_commands(){

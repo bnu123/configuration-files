@@ -1,17 +1,31 @@
+/*
+ *Author : zsenshi
+ testing 
+ */
 #include <bits/stdc++.h> //Only for gcc compilers
-#define int long long
-#define dg(x) cout << #x << ":"<<x<<endl;
-#define dg2(x,y) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<endl;
-#define dg3(x,y,z) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<' '<<#z<<':'<<z<<endl;
-#define dg4(x,y,z,zz) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<' '<<#z<<':'<<z<<' '<<#zz<<':'<<zz<<endl;
-#define forn(i,st,n) for(int (i)=(st); i<(n); i++)
+#define mt make_tuple
+#define eb emplace_back
+#define pb push_back
+#define dg(x) cout << #x << ":"<<x<<endl
+#define dg2(x,y) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<endl
+#define dg3(x,y,z) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<' '<<#z<<':'<<z<<endl
+#define dg4(x,y,z,zz) cout<<#x<<':'<<x<<' '<<#y<<':'<<y<<' '<<#z<<':'<<z<<' '<<#zz<<':'<<zz<<endl
+#define rep(i,begin,end) for(__typeof(end) i = (begin)-((begin) > (end)); i != (end) - ((begin) > (end)); i += 1-2*((begin) > (end)))
+#define left_shift(n) (1 << (n))
+#define right_shift(n) (1 >> (n))
+#define on_bit(n,j) (n |= (left_shift((j))))
+#define toggle_bit(n,j) (n ^= (left_shift((j))))
+#define off_bit(n,j) (n &= ~(left_shift((j))))
+
 using namespace std;
 typedef vector<vector<int>> vvi;
 typedef pair<int,int> pii;
 typedef vector<pii> vii;
 typedef vector<int> vi;
+typedef vector<vector<pii>> vvpi;
 
 int main()
 {
-
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
 }

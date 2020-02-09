@@ -5,7 +5,8 @@ base_dir=$home/codeIt
 
 opt_dir=${1:-"-c"} #default is competing directory
 file=${2:-"test.cpp"} #default file that will open
-quest=${3:-"testing"}
+quest=${3:-testing}
+folder=${4:-""} #default folder.
 
 # check if base_dir exit, otherwise create it
 if [ ! -d $base_dir ]; then
@@ -17,23 +18,53 @@ if [ "$opt_dir" = "-c" ]; then
     if [ ! -d $base_dir/compete ]; then
         mkdir $base_dir/compete
     fi
-    dir=$base_dir/compete
+    if [ -z "$folder" ]; then
+      dir=$base_dir/compete
+    else
+      if [ ! -d $base_dir/compete/$folder ];then
+        mkdir $base_dir/compete/$folder
+      fi
+      dir=$base_dir/compete/$folder
+    fi
+
 elif [ "$opt_dir" = "-a" ]; then
     if [ ! -d $base_dir/algo ]; then
         mkdir $base_dir/algo
     fi
-    dir=$base_dir/algo
-elif [ "$opt_dir" = "-v" ]; then
-    if [ ! -d $base_dir/virtual_contest ]; then
-        mkdir $base_dir/virtual_contest
+    if [ -z "$folder" ]; then 
+      dir=$base_dir/algo
+    else 
+      if [ ! -d $base_dir/algo/$folder ]; then 
+        mkdir $base_dir/algo/$folder
+      fi
+      dir=$base_dir/algo/$folder
     fi
-    dir=$base_dir/virtual_contest
+
+elif [ "$opt_dir" = "-v" ]; then
+    if [ ! -d $base_dir/compete/virtual_contest ]; then
+        mkdir $base_dir/compete/virtual_contest
+    fi
+    if [ -z "$folder" ]; then
+      dir=$base_dir/compete/virtual_contest
+    else 
+      if [ ! -d $base_dir/compete/virtual_contest/$folder ]; then 
+        mkdir $base_dir/compete/virtual_contest/$folder
+      fi
+      dir=$base_dir/compete/virtual_contest/$folder
+    fi
+
 elif [ "$opt_dir" = "-p" ]; then
     if [ ! -d $base_dir/practice ]; then
         mkdir $base_dir/practice
     fi
-    dir=$base_dir/practice
-
+    if [ -z "$folder" ]; then 
+        dir=$base_dir/practice
+    else 
+      if [ ! -d $base_dir/practice/$folder ]; then 
+        mkdir $base_dir/practice/$folder 
+      fi
+       dir=$base_dir/practice/$folder
+    fi
 fi
 
 # change to dir (based on options above)
@@ -41,10 +72,13 @@ cd $dir
 # if file doesn't exists, make one with predefined text
 if [ ! -f $file ]; then
     cat >> $file << END
-//Question : $quest
+/*
+ *Author : zsenshi
+ $quest 
+ */
 END
     cat ~/Projects/HubProj/bash/dotfiles/fpp.txt >> $file
-    vi +15 $file
+    vi +22 $file
 else
     vi $file
 fi
